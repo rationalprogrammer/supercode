@@ -12,6 +12,8 @@ import java.util.Arrays;
  * 1. Check if the numbers are in descending order, if yes, then you have found the answer.
  * 2. If no find a pivot number and then arrange in ascending order the next set
  * 
+ * Difficulty level : Hard
+ * 
  * @author Gaurav
  *
  */
@@ -157,13 +159,15 @@ public class NextNum {
 		return nextNum;
 	}
 	
-	//private static int
 	
+	// print all numbers after it
 	public static void main(String[] args) {
-		int start = 138;
-		//Arrays.	
-		for (int i=0; i<4; i++) {
-			 start = print(start);
+		int start = 5138;
+		while (true) {
+			 int s = print(start);
+			 if (s == start)
+				 break;
+			 start = s;
 		}
 	}
 	
