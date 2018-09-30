@@ -135,7 +135,15 @@ public class NextNum {
 		iArr[bigIndex] = iArr[0];
 		iArr[0] = temp;	
 		
-		return iArr;
+		// bug...
+		// now take out the first element and then arrange the numbers in ascending order
+		// and then join back
+		int first = iArr[0];
+		int[] others = copy(iArr, 1, iArr.length-1);
+		Arrays.sort(others);
+		iArr = combine(new int[]{first}, others);
+		
+		return iArr;				
 	}
 	
 	// check if the values of the array are in descending
@@ -162,6 +170,9 @@ public class NextNum {
 	
 	// print all numbers after it
 	public static void main(String[] args) {
+		
+		//print(56983);
+				
 		int start = 5138;
 		while (true) {
 			 int s = print(start);
@@ -169,6 +180,7 @@ public class NextNum {
 				 break;
 			 start = s;
 		}
+
 	}
 	
 }
